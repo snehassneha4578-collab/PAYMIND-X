@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import Link from "next/link";
 
 import { FormEvent, useState } from "react";
@@ -34,10 +34,14 @@ export default function AIShoppingAssistant() {
     setError("");
     setResult(null);
 
+    const controller = new AbortController();
+    const timeoutId = window.setTimeout(() => controller.abort(), 45_000);
+
     try {
       const response = await fetch("/api/ai/recommend", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        signal: controller.signal,
         body: JSON.stringify({
           goal,
           ...(budget.trim() ? { budget: Number(budget), currency: "INR" } : {}),
@@ -53,12 +57,17 @@ export default function AIShoppingAssistant() {
 
       setResult(data);
     } catch (err) {
-      setError(
-        err instanceof Error
-          ? err.message
-          : "Something went wrong. Please try again."
-      );
+      if (err instanceof Error && err.name === "AbortError") {
+        setError("The recommendation is taking too long. Please try again.");
+      } else {
+        setError(
+          err instanceof Error
+            ? err.message
+            : "Something went wrong. Please try again."
+        );
+      }
     } finally {
+      window.clearTimeout(timeoutId);
       setLoading(false);
     }
   }

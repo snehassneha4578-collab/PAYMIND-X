@@ -48,7 +48,9 @@ next-env.d.ts
 /logs/
 
 # Publish the environment template, never real environment files
-!/.env.example
 
 # Local source backup snapshots
 *.step*-backup-*
+.vercel
+.env*
+!/.env.example
