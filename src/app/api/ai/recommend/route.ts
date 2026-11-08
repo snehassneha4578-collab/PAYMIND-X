@@ -1,4 +1,4 @@
-import { GoogleGenAI } from "@google/genai";
+﻿import { GoogleGenAI } from "@google/genai";
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 
@@ -24,7 +24,8 @@ function isTemporaryGeminiError(error: unknown): boolean {
   return (
     status === 429 ||
     status === 503 ||
-    /UNAVAILABLE|RESOURCE_EXHAUSTED|high demand|rate.?limit/i.test(details)
+    status === 504 ||
+    /UNAVAILABLE|RESOURCE_EXHAUSTED|high demand|rate.?limit|gateway timeout|deadline exceeded/i.test(details)
   );
 }
 
