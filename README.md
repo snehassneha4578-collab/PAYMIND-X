@@ -1,150 +1,253 @@
-﻿# PAYMIND X
+# PAYMIND X
+### Think Smarter. Shop Wiser. Pay Confidently.
 
-**Think smarter. Shop wiser. Pay confidently.**
+**AI-Powered Shopping & Payment Intelligence**
 
-PAYMIND X is an AI-powered shopping and payment-intelligence prototype designed to help users explore products, understand shopping choices, and experience a transparent checkout workflow.
+🌐 **[OPEN LIVE DASHBOARD](https://paymind-x.vercel.app)**
 
-## Features
+💻 **[GitHub Repository](https://github.com/snehassneha4578-collab/PAYMIND-X)**
 
-- **AI Shopping Assistant:** AI-powered shopping guidance and recommendations using Google Gemini.
-- **Product Discovery:** Product discovery interface with an eBay Browse API integration planned. Live listings require provider approval and valid API credentials.
-- **Shopping Dashboard:** A central interface for shopping insights and illustrative product information.
-- **PayPal Sandbox Integration:** Server-side PayPal Orders API integration for creating, verifying, and capturing explicitly approved Sandbox orders.
-- **No-Payment Demo Mode:** A separate local simulation that demonstrates the checkout experience without creating a PayPal order, authorizing a payment, or transferring money.
+<p align="center">
+  <img src="PAYMIND-X-Project-Cover.png" alt="PAYMIND X Project Cover" width="100%">
+</p>
 
-## Technology Stack
+---
 
-- Next.js and React
-- TypeScript
-- Tailwind CSS
-- Google Gemini API
-- PayPal Sandbox REST API
-- Framer Motion
-- Recharts
-- Lucide React
-- Zod
+## 🚀 1. Project Overview
 
-## Requirements
+PAYMIND X is an AI-powered shopping and payment intelligence platform designed to help users make smarter, more informed purchasing decisions.
+
+The platform combines AI-powered shopping assistance, budget-conscious recommendations, an interactive shopping dashboard, and a PayPal Sandbox payment workflow.
+
+Users can describe their shopping requirements, specify their budget, receive AI-generated guidance, and explore a simulated payment process while retaining complete control over payment approval.
+
+**Our vision:** Make online shopping more intelligent, transparent, and user-controlled.
+
+## 🎯 2. Problem Statement
+
+Online shoppers frequently face challenges such as:
+
+- Finding suitable products within a specific budget.
+- Comparing options and understanding product trade-offs.
+- Making informed purchasing decisions.
+- Understanding payment workflows and security.
+- Getting personalized shopping guidance.
+
+PAYMIND X addresses these challenges through an integrated AI-powered shopping intelligence experience.
+
+## 💡 3. Key Features
+
+| Feature | Description |
+|---|---|
+| AI Shopping Assistant | Generates shopping guidance using Google Gemini. |
+| Budget Intelligence | Helps users evaluate choices according to their budget. |
+| Smart Recommendations | Provides AI-generated suggestions based on user requirements. |
+| Interactive Dashboard | Centralized shopping intelligence interface. |
+| PayPal Sandbox | Demonstrates a simulated payment workflow. |
+| Secure Payment Validation | Validates order details on the server. |
+| Responsible AI | Keeps payment authorization under user control. |
+
+## 🖥️ 4. Application Dashboard
+
+The PAYMIND X dashboard provides a centralized interface for shopping intelligence and AI-assisted purchasing decisions.
+
+<p align="center">
+  <img src="PAYMIND-X-Dashboard-Showcase.png" alt="PAYMIND X Dashboard" width="100%">
+</p>
+
+**Dashboard highlights:**
+- Shopping intelligence overview.
+- Illustrative product cards.
+- Budget-oriented shopping experience.
+- AI shopping assistant.
+- Payment workflow access.
+
+*Note: Displayed product examples and prices are illustrative, not verified live marketplace listings.*
+
+## 🏗️ 5. System Architecture
+
+PAYMIND X integrates its web application, AI recommendation service, and PayPal Sandbox payment workflow.
+
+<p align="center">
+  <img src="PAYMIND-X-System-Architecture.png" alt="PAYMIND X System Architecture" width="100%">
+</p>
+
+**Architecture components:**
+
+1. **Frontend:** Next.js web application.
+2. **AI Intelligence:** Google Gemini API for shopping recommendations.
+3. **Payment Integration:** PayPal Sandbox REST API.
+4. **Validation Layer:** Server-side request and payment validation.
+5. **Deployment:** Vercel hosting.
+
+**Product-data transparency:** A live marketplace product-data provider is not currently connected. The application does not represent illustrative products as live listings.
+
+## 🤖 6. AI Shopping Workflow
+
+The AI shopping assistant follows a user-driven recommendation process.
+
+<p align="center">
+  <img src="PAYMIND-X-AI-Shopping-Workflow.png" alt="PAYMIND X AI Shopping Workflow" width="100%">
+</p>
+
+**Workflow:**
+
+1. Define your shopping goal.
+2. Enter your budget.
+3. Submit your shopping requirements.
+4. Receive AI-generated recommendations.
+5. Review the guidance and make your own purchasing decision.
+
+AI recommendations are advisory. The user makes the final decision.
+
+## 💳 7. PayPal Sandbox Integration
+
+PAYMIND X demonstrates payment processing through the PayPal Sandbox environment.
+
+**Payment workflow:**
+
+1. The application creates a validated Sandbox order.
+2. The user receives a PayPal Sandbox approval link.
+3. The server verifies the order details.
+4. Capture is attempted only after PayPal confirms approval.
+5. The application verifies the final payment status.
+
+**Important:** This is a simulated payment demonstration using a fixed USD 1.00 Sandbox order. It does not represent a real purchase, merchant order, or product delivery.
+
+AI cannot independently authorize or capture payments.
+
+## 🔐 8. Security & Responsible AI
+
+<p align="center">
+  <img src="PAYMIND-X-Security-Responsible-AI.png" alt="PAYMIND X Security and Responsible AI" width="100%">
+</p>
+
+Security considerations include:
+
+- Server-side storage of payment credentials.
+- Environment secrets excluded from Git.
+- Server-side validation of payment requests.
+- Verification of order details before capture.
+- Payment status verification through PayPal.
+- No AI-controlled payment authorization.
+- User-controlled payment approval.
+
+PAYMIND X is designed around transparency, responsible AI, and secure payment handling.
+
+## 🛠️ 9. Technology Stack
+
+| Category | Technologies |
+|---|---|
+| Frontend | Next.js, React, TypeScript |
+| Styling | Tailwind CSS |
+| AI Integration | Google Gemini API |
+| Payment Integration | PayPal Sandbox REST API |
+| Validation | Zod |
+| Deployment | Vercel |
+| Version Control | Git, GitHub |
+
+## ⚙️ 10. Installation & Setup
+
+### Prerequisites
 
 - Node.js
 - npm
-- API credentials for the integrations you want to test
+- Git
+- Google Gemini API key
+- PayPal Sandbox application credentials
 
-## Installation
+### Step 1: Clone the repository
 
-Clone or download the project, then open its directory:
-
-```powershell
-cd paymind-x
-npm.cmd install
+```bash
+git clone https://github.com/snehassneha4578-collab/PAYMIND-X.git
+cd PAYMIND-X
 ```
 
-## Environment Configuration
+### Step 2: Install dependencies
 
-Create a local environment file:
-
-```powershell
-Copy-Item .env.example .env.local
+```bash
+npm install
 ```
 
-Configure the required values in `.env.local` using your own credentials.
+### Step 3: Configure environment variables
 
-Supported environment variable names in the project template:
+Create a `.env.local` file in the project root:
 
-- `GEMINI_API_KEY`
-- `PAYPAL_CLIENT_ID`
-- `PAYPAL_CLIENT_SECRET`
-- `PAYPAL_BASE_URL`
-- `DATABASE_URL`
-- `NEXT_PUBLIC_APP_NAME`
-
-Keep `.env.local` private. Never commit API keys, passwords, or secrets to source control.
-
-For PayPal Sandbox testing, use Sandbox credentials and:
-
-```text
+```env
+GEMINI_API_KEY=your_gemini_api_key
+PAYPAL_CLIENT_ID=your_paypal_sandbox_client_id
+PAYPAL_CLIENT_SECRET=your_paypal_sandbox_client_secret
 PAYPAL_BASE_URL=https://api-m.sandbox.paypal.com
+NEXT_PUBLIC_APP_NAME=PAYMIND X
 ```
 
-The local Demo Mode does not require a PayPal payment or buyer approval.
+Never commit `.env.local` or expose API credentials.
 
-## Run Locally
+### Step 4: Start the development server
 
-Start the development server:
-
-```powershell
-npm.cmd run dev
+```bash
+npm run dev
 ```
 
-Open:
+Open your browser:
 
 ```text
 http://localhost:3000
 ```
 
-## Production Build
+### Step 5: Build for production
 
-Build the application:
-
-```powershell
-npm.cmd run build
+```bash
+npm run build
 ```
 
-Start the production server:
+## ⚠️ 11. Current Limitations
 
-```powershell
-npm.cmd run start
-```
+- Live marketplace product listings are not currently connected.
+- Product examples and displayed prices are illustrative.
+- AI recommendation availability depends on the external Gemini service.
+- PayPal integration uses Sandbox rather than live payment processing.
+- Sandbox transactions do not represent real purchases or deliveries.
 
-## Application Routes
+## 🔮 12. Future Enhancements
 
-| Route | Purpose |
-|---|---|
-| `/` | Main dashboard |
-| `/ai-shopping` | AI shopping assistant |
-| `/discover` | Product discovery |
-| `/checkout` | Checkout and Demo Mode |
-| `/checkout/success` | PayPal return page |
-| `/checkout/cancel` | Checkout cancellation page |
+- Integration with an approved live product-data provider.
+- More advanced product comparison capabilities.
+- Improved personalized shopping recommendations.
+- Enhanced budget and shopping analytics.
+- AI reliability monitoring and improvements.
+- Expanded payment workflow testing.
 
-## Payment Safety
+## 🌟 13. Project Impact
 
-PAYMIND X distinguishes between a local simulation and a PayPal Sandbox transaction.
+PAYMIND X demonstrates how AI and payment technology can work together to improve the online shopping decision-making experience.
 
-### Demo Mode
+It brings together:
 
-- Uses a local simulated transaction.
-- Labels the result `SIMULATED`.
-- Does not call PayPal create-order or capture endpoints.
-- Does not represent a real purchase or completed payment.
+- Intelligent shopping assistance.
+- Budget-conscious recommendations.
+- Responsible AI integration.
+- PayPal Sandbox payment demonstration.
+- User-controlled payment approval.
 
-### PayPal Sandbox
+## 📜 14. License
 
-- Uses PayPal Sandbox APIs.
-- Requires explicit user approval through the PayPal Sandbox flow before capture.
-- Uses server-side credentials.
-- Does not represent a real-world purchase or delivery.
+Refer to the repository's `LICENSE` file for the applicable license terms.
 
-Never treat a simulated transaction as a real payment.
+---
 
-## Product Data Disclaimer
+<p align="center">
+  <img src="PAYMIND-X-Closing-Slide.png" alt="PAYMIND X Closing Slide" width="100%">
+</p>
 
-Dashboard product names and prices may be illustrative. Live product listings and prices must only be displayed when verified through an authorized data provider.
+<h2 align="center">PAYMIND X</h2>
 
-The eBay Browse API integration depends on provider access and approval.
+<p align="center">
+  <strong>Intelligent Shopping. Responsible AI. User-Controlled Payments.</strong>
+</p>
 
-## Security
-
-- Keep secret API credentials server-side.
-- Do not expose `.env.local`.
-- Validate payment amounts and product identifiers on the server.
-- Require explicit user approval before requesting payment capture.
-- Keep simulated and actual Sandbox transaction states separate.
-
-## License
-
-This project is distributed under the MIT License. See [LICENSE](LICENSE).
-
-## Project Status
-
-PAYMIND X is an active prototype. Integration availability depends on external API credentials and provider approval.
+<p align="center">
+  🌐 <a href="https://paymind-x.vercel.app">LIVE DASHBOARD</a>
+  &nbsp; | &nbsp;
+  💻 <a href="https://github.com/snehassneha4578-collab/PAYMIND-X">GITHUB REPOSITORY</a>
+</p>
