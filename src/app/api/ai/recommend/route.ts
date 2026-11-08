@@ -1,4 +1,4 @@
-﻿import { GoogleGenAI } from "@google/genai";
+import { GoogleGenAI, ThinkingLevel } from "@google/genai";
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 
@@ -95,7 +95,7 @@ Instructions:
   const ai = new GoogleGenAI({
     apiKey,
     httpOptions: {
-      timeout: 15000,
+      timeout: 25000,
       retryOptions: { attempts: 1 },
     },
   });
@@ -106,6 +106,9 @@ Instructions:
       const response = await ai.models.generateContent({
         model: "gemini-3.8-flash",
         contents: prompt,
+        config: {
+          thinkingConfig: { thinkingLevel: ThinkingLevel.LOW },
+        },
       });
 
       const recommendation = response.text?.trim();

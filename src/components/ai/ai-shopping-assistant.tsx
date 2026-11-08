@@ -35,7 +35,7 @@ export default function AIShoppingAssistant() {
     setResult(null);
 
     const controller = new AbortController();
-    const timeoutId = window.setTimeout(() => controller.abort(), 45_000);
+    const timeoutId = window.setTimeout(() => controller.abort(), 60_000);
 
     try {
       const response = await fetch("/api/ai/recommend", {
