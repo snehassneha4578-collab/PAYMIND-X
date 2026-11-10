@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import ReactMarkdown from "react-markdown";
 
 import { FormEvent, useState } from "react";
 import { motion } from "framer-motion";
@@ -235,9 +236,26 @@ export default function AIShoppingAssistant() {
                   <Sparkles className="h-4 w-4" />
                   {result.provider || "AI"} recommendation
                 </div>
-                <div className="whitespace-pre-wrap text-sm leading-7 text-slate-200">
-                  {result.recommendation}
-                </div>
+                <div className="text-sm leading-7 text-slate-200">
+  <ReactMarkdown
+    components={{
+      h1: ({ children }) => <h1 className="mb-4 mt-6 text-xl font-bold text-white">{children}</h1>,
+      h2: ({ children }) => <h2 className="mb-3 mt-6 text-lg font-bold text-white">{children}</h2>,
+      h3: ({ children }) => <h3 className="mb-2 mt-5 text-base font-semibold text-violet-200">{children}</h3>,
+      p: ({ children }) => <p className="mb-4 last:mb-0">{children}</p>,
+      ul: ({ children }) => <ul className="mb-4 list-disc space-y-2 pl-6">{children}</ul>,
+      ol: ({ children }) => <ol className="mb-4 list-decimal space-y-2 pl-6">{children}</ol>,
+      li: ({ children }) => <li className="pl-1">{children}</li>,
+      strong: ({ children }) => <strong className="font-semibold text-white">{children}</strong>,
+      em: ({ children }) => <em className="italic text-violet-100">{children}</em>,
+      hr: () => <hr className="my-6 border-white/15" />,
+      blockquote: ({ children }) => <blockquote className="my-4 border-l-2 border-violet-300/60 pl-4 text-slate-300">{children}</blockquote>,
+      code: ({ children }) => <code className="rounded bg-white/10 px-1.5 py-0.5 text-violet-200">{children}</code>,
+    }}
+  >
+    {result.recommendation.replace(/\\([*_`#>])/g, "$1")}
+  </ReactMarkdown>
+</div>
               </motion.div>
             )}
           </section>
